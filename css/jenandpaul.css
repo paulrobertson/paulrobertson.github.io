@@ -80,10 +80,6 @@ main h1 {
         transform: scaleY(-1);
     }
 
-    main #content .tab-content {
-        min-height: 18rem;
-    }
-
     main #content::before {
         content:"";
         width: 100%;
