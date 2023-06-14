@@ -1,97 +1,117 @@
-html, body, .container {
-    height: 100%;
-}
-
-html, body, h1, p, a, div, section {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    font: inherit;
-}
+/*
+ * Base structure
+ */
 
 body {
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    font-family: var(--bs-font-sans-serif);
+}
+
+@media (min-width: 768px) {
+    body {
+        background-image: url(../images/family.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+  
+/*
+* Header
+*/
+  
+.nav-masthead .nav-link {
+    color: rgba(255, 255, 255, .5);
+    border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+    border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+    margin-left: 1rem;
+}
+
+.nav-masthead .active {
+    color: #fff;
+    border-bottom-color: #fff !important;
+}
+
+/*
+* Main
+*/
+  
+main {
+    height: 100%;
+    width: 100%;
+    background-blend-mode: difference;
+}
+
+main h1 {
+    font-size: 4rem;
+    font-weight: 200;
+    line-height: 4rem;
     font-family: 'Shadows Into Light Two', cursive;
-    color: #ffffff;
-    background-image: url(../images/family.jpg);
+    border-bottom: 2px solid #fff;
+}
+
+@media (max-width: 767.98px) {
+    main.border {
+        border: none !important;
+    }
+
+    main #content .text {
+        width: 16rem;
+        transform: scaleY(-1);
+    }
+
+    main #content {
+        background-image: url(../images/family-mobile.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: scaleY(-1);
+    }
+
+    main #content .tab-content {
+        min-height: 18rem;
+    }
+
+    main #content::before {
+        content:"";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.3),black);
+        backdrop-filter: blur(8px);
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        flex: none;
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        height: auto;
+        width: 32rem;
+    }
+
+    main h1 {
+        font-size: 5rem;
+        line-height: 5rem;
+    }
+
+    main #content {
+        width: 24rem;
+    }
+}
+
+main #mobile-image {
+    background-image: url(../images/family-mobile.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
-    background-color:#000000;
-}
-
-h1 {
-    color: #000;
-    font-size: 60px;
-    margin: 0 0 20px;
-}
-
-h1 span {
-    border-bottom: 4px solid #000;
-}
-
-.content p {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.container {
-    display: table;
-    width: 100%;
-}
-
-.content {
-    display: table-cell;
-    padding-top: 75px;
-    text-align: center;
-    vertical-align: top;
-}
-
-.content div {
-    background-color: rgba(255, 255, 255, 0.75);
-    color: #000;
-    margin: 0 auto;
-    padding: 10px;
-    width: 24em;
-    -moz-border-radius: 10px; 
-    border-radius: 10px;
-}
-
-@media only screen and (max-width: 767px) {
-    body {
-        background-image: url(../images/family-mobile.jpg);
-    }
-
-    h1 {
-        font-size: 50px;
-    }
-
-    .content {
-        padding-top: 25px;
-    }
-
-    .content div {
-        max-width: 20em;
-        width: 85%;
-    }
-
-    .content p {
-        font-size: 15px;
-        line-height: 1.75;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    h1 {
-        font-size: 40px;
-    }
-
-    .content {
-        padding-top: 25px;
-    }
-
-    .content p {
-        font-size: 13px;
-        line-height: 1.75;
-    }
 }
